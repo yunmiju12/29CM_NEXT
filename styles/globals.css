@@ -1,0 +1,649 @@
+@import url("https://fonts.cdnfonts.com/css/campton");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Campton", "pretendard", sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* height: 100vh; */
+
+  margin-top: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  color: #1a1a1e;
+  /* 버튼에 기본적으로 텍스트 컬러가 파란색으로 들어가 있어서 수정 */
+}
+.logo img {
+  object-fit: contain;
+}
+
+/* ------------------------------- */
+/* _app.js */
+.header_area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  width: 100%;
+  height: 210px;
+
+  padding: 2.5rem 3rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.marginbox {
+  margin-top: 250px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 60px;
+  height: 16px;
+}
+
+.user_box {
+  display: flex;
+  gap: 20px;
+}
+
+.user_nav {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #1a1a1e;
+}
+
+.user_icon {
+  width: 18px;
+  height: 18px;
+  margin: 0 4px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.center .headtext {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.bottom .tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.bottom .tab_list {
+  font-size: 16px;
+  color: #1a1a1e;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* ///////////////////////////////////////////////// */
+/* footer */
+.footer_area {
+  margin-top: 150px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.footer_content {
+  display: flex;
+  width: 100%;
+  padding: 24px 56px;
+}
+
+.footer_top {
+  gap: 8px;
+  flex-direction: column;
+}
+
+.service_number {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service_hours {
+  font-size: 16px;
+  color: #a2a2a2;
+  font-weight: 700;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_box {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 20px;
+  background-color: #222;
+  color: #fff;
+  font-weight: 700;
+}
+
+.sns_box {
+  display: flex;
+  gap: 24px;
+}
+
+.sns_icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* ------------------------------- */
+.flex_box {
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* flex-wrap: wrap; */
+  max-width: 62vw;
+  margin: 0 auto;
+  font-weight: 400;
+  gap: 12px;
+
+  /* 카운터 초기화 */
+  counter-reset: list-number 0;
+}
+
+.out_box {
+  font-size: 12px;
+  line-height: 1.4;
+  width: 100%;
+}
+
+.img_box {
+  /* width: 100%;
+  height: 400px; */
+
+  position: relative;
+}
+
+.img_box::before {
+  /* css 자동 넘버링 */
+  content: counter(list-number);
+  counter-increment: list-number 1;
+
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #000;
+}
+
+.text_content {
+  padding: 16px 0 12px;
+}
+
+.brand_name {
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product_name {
+  font-size: inherit;
+  font-weight: 300;
+}
+
+.text_center {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price {
+  line-height: 1;
+  font-size: 11px;
+  color: rgb(196, 196, 196);
+  text-decoration: line-through;
+  display: block;
+}
+
+.discount {
+  margin-right: 5px;
+  color: rgb(255, 72, 0);
+}
+
+.discount_price {
+  font-weight: 600;
+  color: #000;
+}
+
+.coupon {
+  display: block;
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: 50;
+  color: rgb(29, 29, 29);
+  background-color: rgb(244, 244, 244);
+  border-radius: 1px;
+  margin-top: 6px;
+}
+
+.text_bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgb(93, 93, 93);
+}
+
+.text_bottom button {
+  width: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.text_bottom svg {
+  margin-right: 4px;
+}
+
+.text_bottom svg path {
+  fill: none;
+  stroke: rgb(93, 93, 93);
+}
+
+/* ------------------------------- */
+/* header scroll event */
+.header_area.scroll {
+  height: 120px;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 12px;
+}
+
+.header_area.scroll .center {
+  display: none;
+}
+/* ------------------------------- */
+/* order */
+.order {
+  min-width: 900px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 50px 0;
+}
+
+.order .brandinfo {
+  margin-bottom: 16px;
+  display: flex;
+
+  gap: 14px;
+}
+
+.order .infoImage {
+  width: 74px;
+  height: 74px;
+}
+
+.order .infoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.order .brandName {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.order .explain {
+  font-size: 13px;
+}
+
+.order .brandBtn {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.order .productbox {
+  display: flex;
+  gap: 45px;
+}
+
+.order .productbox .product {
+  width: 50%;
+}
+
+.order .productbox .productImage {
+  flex-shrink: 0;
+}
+
+.order .protop {
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.order .nameLike {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .proname {
+  display: block;
+  padding: 24px 0px;
+  font-size: 600px;
+  font-size: 20px;
+}
+
+.order .heartbox {
+  width: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #e4e4e4;
+  cursor: pointer;
+}
+
+.order .heartbox svg {
+  width: 40px;
+  height: 26px;
+}
+
+.order .reviewBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 2px;
+}
+
+.order .star {
+  display: flex;
+  gap: 2px;
+}
+
+.order .starText {
+  font-size: 11px;
+  color: rgb(93, 93, 93);
+  border-bottom: 0.5px solid rgb(93, 93, 93);
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.order .priceBox {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.order .price {
+  text-decoration: none;
+}
+
+.order .discount {
+  color: rgb(255, 72, 0);
+
+  font-size: 20px;
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.order .discountprice {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.order .originalprice {
+  color: #a0a0a0;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.order .coupon {
+  padding: 0px 14px;
+  font-size: 10px;
+  font-weight: 500;
+  background-color: rgb(29, 29, 29);
+  color: rgb(244, 244, 244);
+  border-radius: 1px;
+  display: flex;
+  width: 97px;
+  height: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order .coupon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.order .packingInfo {
+  margin: 20px 0;
+}
+
+.order .packingFlex {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.order .packingFlex .category {
+  display: block;
+  width: 110px;
+  font-weight: 500;
+}
+
+.order .packingFlex span {
+  color: #474747;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.order .countbox .countui {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d4d4d4;
+}
+
+.order .buybtnbox {
+  display: flex;
+  margin-top: 16px;
+}
+
+.order .buybtn {
+  width: 50%;
+  height: 50px;
+  border: 1px solid #d4d4d4;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order .buybtn.buyingbtn {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 10px 10px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.order .buybtn.buyingbtn:hover {
+  background-color: #ff4800;
+  border-color: #ff4800;
+}
+
+.order .bottom_box {
+  margin-top: 150px;
+  padding-top: 68px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.order .bottom_image {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* -------------------------- */
+/* 반응형 */
+@media (max-width: 1600px) {
+  .flex_box {
+    max-width: 100%;
+    padding: 16px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header_area {
+    height: auto;
+    gap: 14px;
+  }
+
+  .header_area.scroll {
+    height: auto;
+  }
+
+  .cetner {
+    display: none;
+  }
+
+  .marginbox {
+    margin-top: 7rem;
+  }
+
+  /* ----------------- */
+  /* 서브페이지 */
+  .order .productbox {
+    flex-direction: column;
+  }
+
+  .order .productbox .product {
+    width: 100%;
+  }
+
+  .order {
+    min-width: auto;
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .order .bottom_image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 760px) {
+  .flex_box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header_area {
+    padding: 16px;
+  }
+
+  .user_box {
+    gap: 8px;
+  }
+  .user_nav span {
+    display: none;
+  }
+
+  .user_nav_list {
+    display: none;
+  }
+
+  .img_box::before {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .marginbox {
+    margin-top: 5rem;
+  }
+
+  .footer_content {
+    padding: 16px;
+  }
+
+  .order .bottom_image {
+    width: 100%;
+  }
+}
